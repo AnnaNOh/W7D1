@@ -21,7 +21,7 @@ class TodoListItem extends React.Component {
     } else {
       item.done = true;
     }
-    this.props.receiveTodo(item);
+    this.props.createTodo(item);
   }
 
   changeDetail(detail) {

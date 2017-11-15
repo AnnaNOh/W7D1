@@ -6,6 +6,11 @@ class TodoList extends React.Component{
   constructor() {
     super();
   }
+
+  componentDidMount() {
+    this.props.fetchTodos();
+  }
+
   render() {
     return (
       <div>
@@ -15,11 +20,11 @@ class TodoList extends React.Component{
             (<TodoListItem key={obj.id}
                            item={obj}
                            removeTodo={this.props.removeTodo}
-                           receiveTodo={this.props.receiveTodo}/>)
+                           createTodo={this.props.createTodo}/>)
 
           )}
         </ul>
-        <TodoForm onSubmission={this.props.receiveTodo}/>
+        <TodoForm onSubmission={this.props.createTodo}/>
       </div>
     );
   }
